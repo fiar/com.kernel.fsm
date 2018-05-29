@@ -1,0 +1,14 @@
+{
+    "name": "com.kernel.fsm",
+    "displayName": "Kernel FSM",
+	"author": "fiar",
+    "version": "0.9.2",
+    "unity": "2018.1",
+    "description": "Kernel FSM package",
+    "keywords": [
+        "kernel"
+    ],
+    "dependencies": {
+    },
+    "category": "Kernel"
+}
