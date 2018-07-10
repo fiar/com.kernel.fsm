@@ -9,6 +9,8 @@ namespace Kernel.FSM
 		public static IStateBuilder<T, TParent> Concrete<T, TParent>(this IStateBuilder<T, TParent> builder, object concreteState)
 			where T : AbstractState, new()
 		{
+			if (concreteState == null) return builder;
+			
 			var info = ConcreteStateDeclarations.ResolveStateInfo(concreteState.GetType());
 			bool isEntered = false;
 
