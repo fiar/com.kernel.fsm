@@ -2,7 +2,7 @@
     "name": "com.kernel.fsm",
     "displayName": "Kernel FSM",
 	"author": "fiar",
-    "version": "0.9.3",
+    "version": "0.9.4",
     "unity": "2018.1",
     "description": "Kernel FSM package",
     "keywords": [

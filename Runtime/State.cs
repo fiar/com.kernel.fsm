@@ -221,11 +221,10 @@ namespace Kernel.FSM
 		/// </summary>
 		public void Update(float deltaTime)
 		{
-			// Only update the child at the end of the tree
 			if (activeChildren.Count > 0)
 			{
 				activeChildren.Peek().Update(deltaTime);
-				return;
+				//return; // Only update the child at the end of the tree
 			}
 
 			if (onUpdate != null)
@@ -460,10 +459,10 @@ namespace Kernel.FSM
 		/// <param name="eventArgs">Arguments to send to the event</param>
 		public bool TriggerEvent(string name, EventArgs eventArgs)
 		{
-			// Only update the child at the end of the tree
 			if (activeChildren.Count > 0)
 			{
 				return activeChildren.Peek().TriggerEvent(name, eventArgs);
+				//return; // Only update the child at the end of the tree
 			}
 
 			Action<EventArgs> myEvent;
@@ -493,10 +492,10 @@ namespace Kernel.FSM
 		/// <param name="eventArgs">Arguments to send to the event</param>
 		public bool TriggerEventUpwards(string name, EventArgs eventArgs)
 		{
-			// Only update the child at the end of the tree
 			if (activeChildren.Count > 0)
 			{
 				if (activeChildren.Peek().TriggerEventUpwards(name, eventArgs)) return true;
+				//return; // Only update the child at the end of the tree
 			}
 
 			Action<EventArgs> myEvent;
@@ -526,10 +525,10 @@ namespace Kernel.FSM
 		/// <param name="eventArgs">Arguments to send to the event</param>
 		public bool BroadcastEvent(string name, EventArgs eventArgs)
 		{
-			// Only update the child at the end of the tree
 			if (activeChildren.Count > 0)
 			{
 				activeChildren.Peek().BroadcastEvent(name, eventArgs);
+				//return; // Only update the child at the end of the tree
 			}
 
 			Action<EventArgs> myEvent;
